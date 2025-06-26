@@ -28,7 +28,15 @@ MJCF2USD is a user-friendly tool that enables seamless conversion of MuJoCo simu
    git clone <repository-url> /path/to/isaacsim/extensions
    ```
 
-2. Enable the extension through the Extensions Manager in Isaac Sim
+2. Enable the extension through the Extensions Manager in Isaac Sim.
+
+3. **Set the Import Path in Isaac Sim:**
+   - Open Isaac Sim and go to `Window` > `Extensions`.
+   - Click the `Settings` (gear) icon.
+   - In the `Extension Search Paths` section, click the `+` button.
+   - Copy and paste the parent path of the `mjcf2usd` folder (the path where you cloned this repository).
+
+> 📄 **For detailed step-by-step instructions with screenshots, please refer to [Installation.pdf](Installation.pdf) included in this repository.**
 
 ## Usage
 
@@ -36,7 +44,7 @@ MJCF2USD is a user-friendly tool that enables seamless conversion of MuJoCo simu
 
 1. **Launch the Extension**: 
    - Open IsaacSim
-   - Navigate to Extensions Manager
+   - Go to `Window` > `Extensions`.
    - Enable "MJCF2USD" extension
    - The MJCF2USD window will appear
 
@@ -108,7 +116,7 @@ The extension is built using Omniverse Kit's extension system. No additional bui
 - Chengfu.Shang@LIGHTWHEEL
 - haolin.Du@LIGHTWHEEL  
 - Chaorui.Zhang@LIGHTWHEEL
-- Frank Chen@LIGHTWHEEL
+- Frank.Chen@LIGHTWHEEL
 
 ## Version
 
@@ -128,7 +136,3 @@ For more information about this license, visit: https://creativecommons.org/lice
 ## Support
 
 For issues and questions, please contact the development team or create an issue in the repository.
-
-## Changelog
-
-See `docs/CHANGELOG.md` for detailed version history and changes. 
