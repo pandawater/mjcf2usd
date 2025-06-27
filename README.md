@@ -4,7 +4,6 @@ A powerful Isaac Sim extension for converting MuJoCo XML Configuration Format (M
 
 ***Welcome to the Lightwheel open-source community!***
 
-We’re building cutting-edge simulation tools for embodied intelligence.
 Join us, contribute, and help shape the future of AI and robotics.
 For questions or collaboration, contact Frank Chen at ming.chen@lightwheel.ai.
 
