@@ -171,12 +171,16 @@ class MJCF2USDWindow(ui.Window):
                 usd_name = str(model_name) + '.usd'
                 usd_path = os.path.join(parent_dir, usd_name)
             else:
-                parent = os.path.dirname(xml)
-                parent_name = os.path.basename(parent)
-                filefullname = os.path.basename(xml)
-                filename = os.path.splitext(filefullname)[0]
-                compound_name = f"{parent_name}_{filename}.usd"
-                usd_path = os.path.join(self._models["usd_root_path"].get_value_as_string(),compound_name)
+                parent_dir = os.path.dirname(xml)
+                model_name = os.path.basename(parent_dir)
+                usd_name = str(model_name) + '.usd'
+                
+                filepath = os.path.join(self._models["usd_root_path"].get_value_as_string(),model_name)
+                if not os.path.exists(filepath):
+                    os.mkdir(filepath)
+                    
+                usd_path = os.path.join(filepath,usd_name)
+                
             need_modify_xml = self._modify_xml_checkbox.model.get_value_as_bool()
             mjcf_to_usd(xml, usd_path,need_modify_xml)
             if os.path.exists(usd_path):
@@ -188,8 +192,8 @@ class MJCF2USDWindow(ui.Window):
             time_total = sum(self._models["convert_time"])
             time_average = time_total/len(self._xmls)
             time_left = time_average*(len(self._xmls)-i-1)
-            self._message_label.text = f"Converting MJCFs to USDs: {i+1}/{len(self._xmls)}" + \
-            f" Time left: {time_left:.2f} seconds"
+            # self._message_label.text = f"Converting MJCFs to USDs: {i+1}/{len(self._xmls)}" + \
+            # f" Time left: {time_left:.2f} seconds"
         success_text = "\n".join(self._models["usd_success"])
         failed_text = "\n".join(self._models["usd_failed"])
         self._message_label.text += f"\n[Total time]: {time_total:.2f} seconds" + \
@@ -207,6 +211,7 @@ class MJCF2USDWindow(ui.Window):
         self._models["convert_time"] = []
         self._models["usd_success"] = []
         self._models["usd_failed"] = []
+        self._mjcf2usd_button.enabled = True
         
         
         
