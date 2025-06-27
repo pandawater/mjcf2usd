@@ -1,10 +1,13 @@
 # MJCF2USD
 
-A powerful Omniverse extension for converting MuJoCo XML Configuration Format (MJCF) files to Universal Scene Description (USD) format.
+A powerful Isaac Sim extension for converting MuJoCo XML Configuration Format (MJCF) files to Universal Scene Description (USD) format.
 
-**Lightwheel is hiring!** 
+***Welcome to the Lightwheel open-source community!***
 
-If you're interested in joining our team, please contact Frank Chen: **ming.chen@lightwheel.ai**
+We’re building cutting-edge simulation tools for embodied intelligence.
+Join us, contribute, and help shape the future of AI and robotics.
+For questions or collaboration, contact Frank Chen at ming.chen@lightwheel.ai.
+
 
 
 ## Overview
