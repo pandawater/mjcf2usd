@@ -120,17 +120,6 @@ The extension is built using Omniverse Kit's extension system. No additional bui
 
 Current version: 1.0.0
 
-## License
-
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. See [LICENSE.txt](LICENSE.txt) for the full license text.
-
-**Summary of License Terms:**
-- **Attribution**: You must give appropriate credit to the original authors
-- **NonCommercial**: You may not use the material for commercial purposes
-- **ShareAlike**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license
-
-For more information about this license, visit: https://creativecommons.org/licenses/by-nc/4.0/
-
 ## Support
 
 For issues and questions, please contact the development team or create an issue in the repository.
