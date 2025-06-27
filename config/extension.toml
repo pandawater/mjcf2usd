@@ -3,7 +3,7 @@
 version = "1.0.0"
 
 # Lists people or organizations that are considered the "authors" of the package.
-authors = ["Chengfu.Shang@LIGHTWHEEL, haolin.du@LIGHTWHEEL, Frank Chen@LIGHTWHEEL"]
+authors = ["LIGHTWHEEL"]
 
 # The title and description fields are primarily for displaying extension info in UI
 title = "MJCF2USD"

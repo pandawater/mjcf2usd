@@ -2,6 +2,11 @@
 
 A powerful Omniverse extension for converting MuJoCo XML Configuration Format (MJCF) files to Universal Scene Description (USD) format.
 
+**Lightwheel is hiring!** 
+
+If you're interested in joining our team, please contact Frank Chen: **ming.chen@lightwheel.ai**
+
+
 ## Overview
 
 MJCF2USD is a user-friendly tool that enables seamless conversion of MuJoCo simulation files to USD format, making it easy to integrate MuJoCo models into Omniverse workflows and other USD-compatible applications.
@@ -113,10 +118,10 @@ The extension is built using Omniverse Kit's extension system. No additional bui
 
 ## Authors
 
+- Haolin.Du@LIGHTWHEEL  
 - Chengfu.Shang@LIGHTWHEEL
-- haolin.Du@LIGHTWHEEL  
+- Lei.Hu@LIGHTWHEEL
 - Chaorui.Zhang@LIGHTWHEEL
-- Frank.Chen@LIGHTWHEEL
 
 ## Version
 
