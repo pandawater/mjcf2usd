@@ -116,13 +116,6 @@ MJCF2USD/
 
 The extension is built using Omniverse Kit's extension system. No additional build steps are required beyond the standard Python module structure.
 
-## Authors
-
-- Haolin.Du@LIGHTWHEEL  
-- Chengfu.Shang@LIGHTWHEEL
-- Lei.Hu@LIGHTWHEEL
-- Chaorui.Zhang@LIGHTWHEEL
-
 ## Version
 
 Current version: 1.0.0
