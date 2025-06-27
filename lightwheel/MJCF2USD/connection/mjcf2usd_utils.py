@@ -493,7 +493,7 @@ class XMLHandler:
             geom.set('name', geom_name + '_' + str(dict_name[geom_name] ))
             dict_name[geom_name] += 1
     
-    def elem_update_with_ref_quat(elem,mesh_quat,mesh_ref_quat):
+    def elem_update_with_ref_quat(self,elem,mesh_quat,mesh_ref_quat):
         if mesh_ref_quat and mesh_quat:
             
             mesh_ref_quat_R = convert_quat_mjcf_2_scipy(mesh_ref_quat)
