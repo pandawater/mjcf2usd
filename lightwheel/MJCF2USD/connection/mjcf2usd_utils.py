@@ -807,27 +807,48 @@ def if_joints_linked(stage,joint_path,target_path)->bool:
         return False
             
 def set_joint_properties(joint,joint_data):
+
+    usd_joint_dict = {
+        "PhysicsPrismaticJoint": {
+            "frictionloss": {"physxJoint:jointFriction"},
+            "damping":      {"physxLimit:linear:damping"},
+            "stiffness":    {"physxLimit:linear:stiffness"}
+        },
+        "PhysicsRevoluteJoint": {
+            "frictionloss": {"physxJoint:jointFriction"},
+            "damping":      {"physxLimit:angular:damping"},
+            "stiffness":    {"physxLimit:angular:stiffness"}
+        },
+        "PhysicsSphericalJoint": {
+            "frictionloss": {"physxJoint:jointFriction"},
+            "damping": {
+                "physxLimit:transX:damping",
+                "physxLimit:transY:damping",
+                "physxLimit:transZ:damping"
+            },
+            "stiffness": {
+                "physxLimit:transX:stiffness",
+                "physxLimit:transY:stiffness",
+                "physxLimit:transZ:stiffness"
+            }
+        }
+    }
     
-    frictionloss = joint_data.get("frictionloss")
-    if frictionloss:
-        if joint.HasAttribute("physxJoint:jointFriction"): 
-            joint.GetAttribute("physxJoint:jointFriction").Set(float(frictionloss))
-        else:
-            joint.CreateAttribute("physxJoint:jointFriction", Sdf.ValueTypeNames.Float).Set(float(frictionloss))
-        
-    damping = joint_data.get("damping")
-    if damping:
-        if joint.HasAttribute("physxLimit:angular:damping"):
-            joint.GetAttribute("physxLimit:angular:damping").Set(float(damping))
-        else:    
-            joint.CreateAttribute("physxLimit:angular:damping", Sdf.ValueTypeNames.Float).Set(float(damping))
-         
-    stiffness = joint_data.get("stiffness")
-    if stiffness:
-        if joint.HasAttribute("physxLimit:angular:stiffness"):
-            joint.GetAttribute("physxLimit:angular:stiffness").Set(float(stiffness))
-        else:
-            joint.CreateAttribute("physxLimit:angular:stiffness", Sdf.ValueTypeNames.Float).Set(float(stiffness))
+    joint_type = joint.GetTypeName()
+    if joint_type not in usd_joint_dict:
+        print(f"set unsupported joint properties {joint_type}")
+        return
+    
+    properties = usd_joint_dict[joint_type]
+    for prop_name, usd_attrs in properties.items():
+        value = joint_data.get(prop_name)
+        if value is None:
+            continue
+        for attr in usd_attrs:
+            if joint.HasAttribute(attr):
+                joint.GetAttribute(attr).Set(float(value))
+            else:
+                joint.CreateAttribute(attr, Sdf.ValueTypeNames.Float).Set(float(value))
         
 def clear_temp_usd(root_dir):
     for dirpath, dirnames, filenames in os.walk(root_dir):
